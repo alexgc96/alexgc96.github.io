@@ -4,99 +4,309 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>alexgc96</title>
+  <meta name="description" content="3d art and front end development." />
+  <meta property="og:title" content="alexgc96" />
+  <meta property="og:description" content="3d art and front end development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexgc96.github.io" />
+  <meta property="og:image" content="https://alexgc96.github.io/me.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="alexgc96" />
+  <meta name="twitter:description" content="3d art and front end development." />
+  <meta name="twitter:image" content="https://alexgc96.github.io/me.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* analogtrsh-light */
     :root {
-      --bg: #0e0e0e;
-      --fg: #d4d0c8;
-      --dim: #888;
-      --accent: #c8a46e;
-      --border: #2a2a2a;
-      --mono: "Courier New", Courier, monospace;
+      --bg:       #f2f2f2;
+      --surface:  #ffffff;
+      --surface2: #e8e8e8;
+      --border:   #d0d0d0;
+      --border-hi:#000000;
+      --text:     #000000;
+      --muted:    rgba(0,0,0,0.45);
+      --accent:   #ff3b1f;
+      --mono:     'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: var(--bg);
-      color: var(--fg);
+      color: var(--text);
       font-family: var(--mono);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.65;
       min-height: 100vh;
-      padding: 3rem 1.5rem;
+      padding: 4.5rem 2rem;
     }
 
     .wrap {
-      max-width: 640px;
+      max-width: 760px;
       margin: 0 auto;
     }
 
+    /* ── HEADER / NEOFETCH ─────────────────── */
+
     header {
-      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
     }
 
-    h1 {
+    .photo-wrap {
+      margin-top: 1.5rem;
+      flex-shrink: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      filter: grayscale(15%);
+    }
+
+    .neofetch {
+      flex: 1;
+      min-width: 0;
+      padding-top: 2px;
+    }
+
+    .neo-name {
       font-size: 1.1rem;
-      font-weight: normal;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+
+    .neo-name .handle { color: var(--accent); }
+
+    .neo-rule {
+      color: var(--border-hi);
+      opacity: 0.2;
+      font-size: 0.72rem;
+      margin-bottom: 0.45rem;
+      letter-spacing: 0;
+    }
+
+    .neo-table { border-collapse: collapse; }
+
+    .neo-table td {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      vertical-align: top;
+    }
+
+    .neo-table .k {
       color: var(--accent);
-      letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
+      font-weight: 600;
+      white-space: nowrap;
+      padding-right: 0.6rem;
+      letter-spacing: 0.04em;
     }
 
-    .tagline {
-      color: var(--dim);
-      font-size: 0.85rem;
+    .neo-table .s {
+      color: var(--muted);
+      padding-right: 0.6rem;
     }
 
-    hr {
+    .neo-table .v { color: var(--text); }
+
+    .neo-table a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── BIO ───────────────────────────────── */
+
+    .bio {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.6;
+    }
+
+    /* ── DIVIDERS ──────────────────────────── */
+
+    .rule {
       border: none;
       border-top: 1px solid var(--border);
       margin: 2rem 0;
     }
 
-    section {
-      margin-bottom: 2rem;
-    }
+    /* ── SECTIONS ──────────────────────────── */
 
-    h2 {
-      font-size: 0.75rem;
-      text-transform: uppercase;
+    section { margin-bottom: 2rem; }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
       letter-spacing: 0.12em;
-      color: var(--dim);
+      color: var(--muted);
       margin-bottom: 1rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    /* ── NOW WINDOW ───────────────────────── */
+
+    .now-window {
+      --bg:       #000000;
+      --surface:  #0d0d0d;
+      --surface2: #1a1a1a;
+      --border:   #222222;
+      --border-hi:#ffffff;
+      --text:     #ffffff;
+      --muted:    rgba(255,255,255,0.45);
+      border: 1px solid #222222;
+      margin-top: 2rem;
+      color: #ffffff;
     }
 
-    ul li {
-      padding: 0.15rem 0;
+    .now-titlebar {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      user-select: none;
     }
 
-    ul li::before {
-      content: "— ";
-      color: var(--dim);
+    .now-titlebar .win-btns { color: var(--accent); letter-spacing: 0.04em; }
+    .now-titlebar .win-title { flex: 1; }
+
+    .now-body {
+      background: var(--surface);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
     }
 
-    .project-name {
+    .now-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .now-inline {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .now-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .now-book {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .book-thumb {
+      width: 52px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .now-spotify {
+      margin-top: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    /* ── PROJECT LIST ──────────────────────── */
+
+    .project-list { list-style: none; }
+
+    .project-list li {
+      font-size: 0.92rem;
+      padding: 0.25rem 0;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .project-list li::before {
+      content: "→";
       color: var(--accent);
+      flex-shrink: 0;
     }
 
-    .project-note {
-      color: var(--dim);
-      font-size: 0.8rem;
+    .proj-name { font-weight: 600; color: inherit; text-decoration: none; }
+    a.proj-name:hover { color: var(--accent); }
+
+    .proj-note {
+      color: var(--muted);
+      font-size: 0.86rem;
     }
+
+    /* ── GITHUB BAR ────────────────────────── */
+
+    .gh-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .gh-back {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: color 100ms ease-out;
+    }
+
+    .gh-back:hover { color: var(--text); }
+
+    .gh-back img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: grayscale(1);
+      opacity: 0.6;
+      transition: opacity 100ms ease-out;
+    }
+
+    .gh-back:hover img { opacity: 1; }
+
+    /* ── LINKS ─────────────────────────────── */
+
+    .links { display: flex; flex-wrap: wrap; gap: 0.2rem 0; }
 
     .links a {
-      display: inline-block;
-      color: var(--fg);
+      color: var(--text);
       text-decoration: none;
+      font-size: 0.92rem;
       border-bottom: 1px solid var(--border);
-      margin-right: 1.5rem;
-      margin-bottom: 0.5rem;
-      transition: color 0.15s, border-color 0.15s;
+      padding-bottom: 1px;
+      margin-right: 1.75rem;
+      margin-bottom: 0.45rem;
+      transition: color 100ms ease-out, border-color 100ms ease-out;
     }
 
     .links a:hover {
@@ -104,46 +314,594 @@
       border-color: var(--accent);
     }
 
+    /* ── FOOTER ────────────────────────────── */
+
     footer {
-      color: var(--dim);
-      font-size: 0.75rem;
+      color: var(--muted);
+      font-size: 0.8rem;
       margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    footer .mark { color: var(--accent); }
+
+    .footer-hint {
+      font-size: 0.72rem;
+      color: var(--muted);
+      opacity: 0.6;
+      cursor: default;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CALENDAR PANEL ────────────────────── */
+
+    .cal-panel {
+      --surface:  #0d0d0d;
+      --surface2: #1a1a1a;
+      --border:   #222222;
+      --text:     #ffffff;
+      --muted:    rgba(255,255,255,0.45);
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 300px;
+      transform: translateX(100%);
+      transition: transform 0.28s ease;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid #222222;
+      background: #0d0d0d;
+      color: #ffffff;
+      overflow-y: auto;
+    }
+
+    .cal-panel.open { transform: translateX(0); }
+
+    .cal-titlebar {
+      background: #1a1a1a;
+      border-bottom: 1px solid #222222;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.45);
+      user-select: none;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .cal-titlebar .win-btns { color: var(--accent); letter-spacing: 0.04em; }
+    .cal-titlebar .win-title { flex: 1; }
+    .cal-titlebar .cal-hint { font-size: 0.62rem; opacity: 0.5; }
+
+    .cal-body { padding: 1.5rem 1.25rem; }
+
+    .cal-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .cal-nav-btn {
+      background: none;
+      border: 1px solid #333;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      cursor: pointer;
+      transition: color 100ms, border-color 100ms;
+    }
+
+    .cal-nav-btn:hover { color: #fff; border-color: #666; }
+
+    .cal-month-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .cal-dow-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin-bottom: 4px;
+    }
+
+    .cal-dow {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.25);
+      text-align: center;
+      padding: 2px 0;
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+
+    .cal-cell {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+      position: relative;
+      cursor: default;
+    }
+
+    .cal-cell.in-month { color: rgba(255,255,255,0.75); }
+    .cal-cell.is-today { color: #fff; font-weight: 700; }
+
+    .cal-cell.has-event {
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .cal-cell.has-event::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .cal-cell.selected {
+      background: #222;
+      outline: 1px solid #333;
+    }
+
+    .cal-cell.is-today.selected { outline-color: var(--accent); }
+
+    .cal-event-box {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      min-height: 48px;
+    }
+
+    .cal-event-date {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .cal-event-text {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .cal-event-empty {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ── ANIMATIONS ────────────────────────── */
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .neo-cursor {
+      color: var(--accent);
+      animation: blink 0.75s step-end infinite;
+    }
+
+    .photo-wrap {
+      animation: fadeUp 0.5s ease-out 0.5s both;
+    }
+
+    .neo-rule, .neo-table {
+      animation: fadeUp 0.45s ease-out 1.7s both;
+    }
+
+    .bio {
+      animation: fadeUp 0.4s ease-out 2.0s both;
+    }
+
+    .wrap > .rule { animation: fadeUp 0.35s ease-out 2.2s both; }
+
+    section:nth-of-type(1) { animation: fadeUp 0.4s ease-out 2.25s both; }
+    section:nth-of-type(2) { animation: fadeUp 0.4s ease-out 2.45s both; }
+
+    .now-window { animation: fadeUp 0.4s ease-out 2.65s both; }
+
+    .wrap > hr:last-of-type { animation: fadeUp 0.35s ease-out 2.8s both; }
+
+    footer { animation: fadeUp 0.4s ease-out 2.9s both; }
+
+    /* ── CALENDAR TOGGLE TAB ──────────────── */
+
+    .cal-toggle {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid #333333;
+      border-right: none;
+      padding: 14px 7px;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      z-index: 199;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transition: background 100ms ease-out, color 100ms ease-out;
+      user-select: none;
+    }
+
+    .cal-toggle:hover {
+      background: #262626;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .cal-toggle.open {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ── RESPONSIVE ────────────────────────── */
+
+    @media (max-width: 600px) {
+      body { padding: 2.5rem 1.25rem; }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .photo-wrap {
+        margin-top: 0;
+        width: 130px;
+        height: 130px;
+      }
+
+      .neo-name { text-align: center; }
+      .neo-rule { text-align: center; }
+      .neo-table { margin: 0 auto; }
+
+      .now-body { padding: 1.25rem 1rem; }
+
+      .now-inline {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .cal-panel { width: 100%; }
+
+      footer {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="gh-bar">
+    <a class="gh-back" href="https://github.com/alexgc96">
+      <img src="octocat.jpg" alt="GitHub" />
+      github.com/alexgc96
+    </a>
+  </div>
+
   <div class="wrap">
+
     <header>
-      <h1>alexgc96</h1>
-      <p class="tagline">bash scripts, small web apps, and the occasional larger project.</p>
+      <div class="photo-wrap">
+        <img src="me.jpg" alt="alex" />
+      </div>
+      <div class="neofetch">
+        <div class="neo-name"><span class="handle" id="neoHandle"></span><span id="neoRest"></span><span class="neo-cursor">▌</span></div>
+        <div class="neo-rule">────────────────────────────────</div>
+        <table class="neo-table">
+          <tr>
+            <td class="k">location</td>
+            <td class="s">:</td>
+            <td class="v">mexicali, mx</td>
+          </tr>
+          <tr>
+            <td class="k">shell</td>
+            <td class="s">:</td>
+            <td class="v">zsh</td>
+          </tr>
+          <tr>
+            <td class="k">blender</td>
+            <td class="s">:</td>
+            <td class="v">since 2.47</td>
+          </tr>
+          <tr>
+            <td class="k">languages</td>
+            <td class="s">:</td>
+            <td class="v">python · js · php</td>
+          </tr>
+          <tr>
+            <td class="k">likes</td>
+            <td class="s">:</td>
+            <td class="v">3d art · aviation · cryptozoology</td>
+          </tr>
+          <tr>
+            <td class="k">studio</td>
+            <td class="s">:</td>
+            <td class="v"><a href="https://analogtrsh.com" target="_blank" rel="noopener">analogtrsh.com</a></td>
+          </tr>
+        </table>
+      </div>
     </header>
 
-    <hr />
+    <p class="bio">3d art and front end development.</p>
+
+    <hr class="rule" />
 
     <section>
-      <h2>what lives here</h2>
-      <ul>
-        <li><span class="project-name">StudioOS</span> <span class="project-note">— workflow OS for a small digital art studio (coming soon)</span></li>
-        <li><span class="project-name">bash utilities</span> <span class="project-note">— file wrangling, pipeline helpers, the usual</span></li>
-        <li><span class="project-name">web stuff</span> <span class="project-note">— mostly vanilla or lightweight Flask</span></li>
+      <div class="eyebrow">// what lives here</div>
+      <ul class="project-list">
+        <li>
+          <span class="proj-name">StudioOS</span>
+          <span class="proj-note">— workflow OS for a small digital art studio (coming soon)</span>
+        </li>
+        <li>
+          <span class="proj-name">bash utilities</span>
+          <span class="proj-note">— file wrangling, pipeline helpers, the usual</span>
+        </li>
+        <li>
+          <span class="proj-name">web stuff</span>
+          <span class="proj-note">— mostly vanilla or lightweight Flask</span>
+        </li>
       </ul>
     </section>
 
-    <hr />
+    <hr class="rule" />
 
     <section>
-      <h2>elsewhere</h2>
+      <div class="eyebrow">// elsewhere</div>
       <div class="links">
         <a href="https://analogtrsh.com" target="_blank" rel="noopener">analogtrsh.com</a>
         <a href="https://frame-buffer.neocities.org" target="_blank" rel="noopener">Frame Buffer</a>
+        <a href="https://frame-buffer.neocities.org/links" target="_blank" rel="noopener">links</a>
         <a href="https://researchcryptozoology.blogspot.com" target="_blank" rel="noopener">Research Cryptozoology</a>
-        <a href="https://github.com/alexgc96" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
 
-    <hr />
+    <div class="now-window">
+      <div class="now-titlebar">
+        <span class="win-btns">□□■</span>
+        <span class="win-title">NOW.LOG</span>
+      </div>
+      <div class="now-body">
 
-    <footer>still runnin' on a mid-2014 MacBook Pro.</footer>
+        <div class="now-group">
+          <div class="now-label">CODE</div>
+          <ul class="project-list">
+            <li><span class="proj-name">StudioOS</span> <span class="proj-note">— yaml-first, no-db project dashboard. tags your actual filesystem with metadata.</span></li>
+            <li><a class="proj-name" href="https://github.com/alexgc96/metar-cli" target="_blank" rel="noopener">metar-cli</a> <span class="proj-note">— learning python by building cli tools</span></li>
+          </ul>
+        </div>
+
+        <div class="now-group">
+          <div class="now-label">STUDIO</div>
+          <ul class="project-list">
+            <li><span class="proj-name">WP theme + client portal</span> <span class="proj-note">— custom php, setting it all up</span></li>
+            <li><span class="proj-name">analogtrsh zine vol. 01</span> <span class="proj-note">— in design</span></li>
+            <li><span class="proj-name">irix portfolio</span> <span class="proj-note">— finishing up</span></li>
+          </ul>
+        </div>
+
+        <div class="now-group">
+          <div class="now-label">READING</div>
+          <div class="now-book">
+            <img src="jp.jpg" alt="Jurassic Park cover" class="book-thumb" />
+            <span class="proj-note">Jurassic Park<br>Michael Crichton</span>
+          </div>
+        </div>
+
+        <div class="now-group">
+          <div class="now-label">LISTENING</div>
+          <span class="proj-note">darcy — Wabie</span>
+          <iframe class="now-spotify"
+            src="https://open.spotify.com/embed/track/20ZVYu0lsdCsuzMKfcadZN?utm_source=generator&theme=0"
+            width="100%" height="152" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="rule" />
+
+    <footer>
+      <span>still runnin' on a mid-2014 MacBook Pro.</span>
+      <span><span class="mark">▮</span> ©2026 analogtrsh studio</span>
+      <span class="footer-hint">] → calendar</span>
+    </footer>
+
   </div>
+
+  <button class="cal-toggle" id="calToggle" aria-label="open calendar">▸ CAL</button>
+
+  <!-- ── CALENDAR PANEL ──────────────────── -->
+  <div class="cal-panel" id="calPanel">
+    <div class="cal-titlebar">
+      <span class="win-btns">□□■</span>
+      <span class="win-title">CALENDAR.LOG</span>
+      <span class="cal-hint" id="calHint" style="cursor:pointer;">[esc]</span>
+    </div>
+    <div class="cal-body">
+      <div class="cal-nav">
+        <button class="cal-nav-btn" id="calPrev">◂</button>
+        <span class="cal-month-label" id="calMonthLabel"></span>
+        <button class="cal-nav-btn" id="calNext">▸</button>
+      </div>
+      <div class="cal-dow-row">
+        <div class="cal-dow">SU</div>
+        <div class="cal-dow">MO</div>
+        <div class="cal-dow">TU</div>
+        <div class="cal-dow">WE</div>
+        <div class="cal-dow">TH</div>
+        <div class="cal-dow">FR</div>
+        <div class="cal-dow">SA</div>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-event-box" id="calEventBox">
+        <div class="cal-event-empty">select a date ▸</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ── typewriter ── */
+    const handle  = 'alex';
+    const rest    = 'gc96';
+    const neoHandle = document.getElementById('neoHandle');
+    const neoRest   = document.getElementById('neoRest');
+    let i = 0;
+
+    function typeChar() {
+      if (i < handle.length) {
+        neoHandle.textContent = handle.slice(0, i + 1);
+      } else {
+        neoRest.textContent = rest.slice(0, i - handle.length + 1);
+      }
+      i++;
+      if (i < handle.length + rest.length) setTimeout(typeChar, 160);
+    }
+
+    setTimeout(typeChar, 200);
+
+    /* ── panel toggle ── */
+    const calPanel  = document.getElementById('calPanel');
+    const calToggle = document.getElementById('calToggle');
+    const calHint   = document.getElementById('calHint');
+
+    function openCal()   { calPanel.classList.add('open');    calToggle.classList.add('open'); }
+    function closeCal()  { calPanel.classList.remove('open'); calToggle.classList.remove('open'); }
+    function toggleCal() { calPanel.classList.contains('open') ? closeCal() : openCal(); }
+
+    calToggle.addEventListener('click', toggleCal);
+    calHint.addEventListener('click', closeCal);
+
+    document.addEventListener('keydown', e => {
+      if (calPanel.contains(document.activeElement)) return;
+      if (e.key === ']')      { e.preventDefault(); toggleCal(); }
+      if (e.key === 'Escape') closeCal();
+    });
+
+    /* ── calendar ── */
+    const EVENTS = {
+      '2026-06-24': 'cryptozoology blog — new article',
+      '2026-06-28': 'analogtrsh.com launch',
+      '2026-07-01': 'analogtrsh zine vol. 01',
+      '2026-07-05': 'Frame Buffer update',
+      '2026-07-10': 'metar-cli update',
+      '2026-07-15': 'StudioOS release',
+    };
+
+    const MONTHS = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE',
+                    'JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+
+    const today = new Date();
+    let cur = { y: today.getFullYear(), m: today.getMonth() };
+    let selected = null;
+
+    const grid      = document.getElementById('calGrid');
+    const label     = document.getElementById('calMonthLabel');
+    const eventBox  = document.getElementById('calEventBox');
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function dateKey(y, m, d) { return `${y}-${pad(m+1)}-${pad(d)}`; }
+
+    function renderCal() {
+      label.textContent = `${MONTHS[cur.m]} ${cur.y}`;
+      grid.innerHTML = '';
+
+      const first = new Date(cur.y, cur.m, 1).getDay();
+      const days  = new Date(cur.y, cur.m + 1, 0).getDate();
+
+      for (let i = 0; i < first; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'cal-cell';
+        grid.appendChild(cell);
+      }
+
+      for (let d = 1; d <= days; d++) {
+        const key  = dateKey(cur.y, cur.m, d);
+        const cell = document.createElement('div');
+        const isToday = (d === today.getDate() && cur.m === today.getMonth() && cur.y === today.getFullYear());
+
+        cell.className = 'cal-cell in-month'
+          + (EVENTS[key]      ? ' has-event' : '')
+          + (isToday          ? ' is-today'  : '')
+          + (selected === key ? ' selected'  : '');
+        cell.textContent = d;
+
+        if (EVENTS[key]) {
+          cell.addEventListener('click', () => selectDate(key));
+        }
+
+        grid.appendChild(cell);
+      }
+    }
+
+    function selectDate(key) {
+      selected = key;
+      renderCal();
+      const [y, m, d] = key.split('-');
+      const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+      eventBox.innerHTML = `
+        <div class="cal-event-date">${months[parseInt(m)-1]} ${parseInt(d)}, ${y}</div>
+        <div class="cal-event-text">${EVENTS[key]}</div>`;
+    }
+
+    document.getElementById('calPrev').addEventListener('click', () => {
+      cur.m--; if (cur.m < 0) { cur.m = 11; cur.y--; }
+      selected = null;
+      eventBox.innerHTML = '<div class="cal-event-empty">select a date ▸</div>';
+      renderCal();
+    });
+
+    document.getElementById('calNext').addEventListener('click', () => {
+      cur.m++; if (cur.m > 11) { cur.m = 0; cur.y++; }
+      selected = null;
+      eventBox.innerHTML = '<div class="cal-event-empty">select a date ▸</div>';
+      renderCal();
+    });
+
+    renderCal();
+  </script>
 </body>
 </html>
