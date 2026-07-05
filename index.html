@@ -223,6 +223,15 @@
       flex-shrink: 0;
       border: 1px solid var(--border);
       display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .book-link:hover .book-thumb {
+      transform: scale(1.12);
+    }
+
+    .book-link {
+      display: contents;
     }
 
     .now-spotify {
@@ -724,7 +733,9 @@
         <div class="now-group">
           <div class="now-label">READING</div>
           <div class="now-book">
-            <img src="jp.jpg" alt="Jurassic Park cover" class="book-thumb" />
+            <a href="https://www.barnesandnoble.com/w/jurassic-park-michael-crichton/1100400615" target="_blank" rel="noopener noreferrer" class="book-link">
+              <img src="jp.jpg" alt="Jurassic Park cover" class="book-thumb" />
+            </a>
             <span class="proj-note">Jurassic Park<br>Michael Crichton</span>
           </div>
         </div>
